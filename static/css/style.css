@@ -1,0 +1,95 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f5efee !important;
+}
+
+.searchbar {
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+}
+
+.search_input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 450px;
+  caret-color: transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_input {
+  caret-color: white;
+  transition: width 0.4s linear;
+}
+
+.searchbar:hover > .search_icon {
+  background: 353b48;
+  color: #f5efee;
+}
+
+.search_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
+.search_image_icon {
+  height: 40px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+}
+
+.DigID_logo {
+}
+
+.col-md-offset-3.col-lg-6.col-lg-offset-3 {
+  margin: auto;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+img.center {
+  margin-bottom: 10%;
+  margin-top: 20%;
+  width: 25%;
+}
+
+.text-center.digid_desc {
+  margin-top: 10%;
+}
+
+/* input.search_image_icon::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f030";
+  font-weight: 1000;
+  font-size: 1.2em;
+  margin-top: 5px;
+  margin-left: 10px;
+} */
