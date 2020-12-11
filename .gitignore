@@ -1,5 +1,5 @@
 #fontawesome
-static/fontawesome-free-5.15.1-web/*
+static/fontawesome-free-5.15.1-web/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
