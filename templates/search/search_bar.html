@@ -1,0 +1,15 @@
+{% extends 'home_page.html' %}
+
+{% block search_bar %}
+<form method=post enctype=multipart/form-data>                
+    <input class="search_input" type="text" name="text" placeholder="Search person by image or text ...">
+    <label for="submit-botton" class="search_icon">
+      <i class="fas fa-search"></i>
+    </label>                         
+    <input id="image-input" type="file" name=file onchange="form.submit()">
+    <label for="image-input" class="search_image_icon">
+      <i class="fas fa-camera"></i>
+    </label>                
+    <input id="submit-botton" type=submit value=Search>
+</form>
+{% endblock %}

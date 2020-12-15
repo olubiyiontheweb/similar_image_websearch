@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Search Results - DigID - Find someone's digital footprints in one place</title>
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../static/fontawesome-free-5.15.1-web/css/all.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="mb-3 search_bar_result_page">
+                <form method=post enctype=multipart/form-data class="search_bar_result">                
+                    <input class="search_input" type="text" name="text" placeholder="Search person by image or text ...">
+                    <label for="submit-botton" class="search_icon">
+                        <i class="fas fa-search"></i>
+                    </label>                         
+                    <input id="image-input" type="file" name=file onchange="form.submit()">
+                    <label for="image-input" class="search_image_icon">
+                        <i class="fas fa-camera"></i>
+                    </label>                
+                    <input id="submit-botton" type=submit value=Search>  
+                </form>
+            </div>
+            <hr/>
+            <section class="col-xs-12 col-sm-6 col-md-12">
+                <hgroup class="mb20">
+                <h4>Search Results</h3>
+                <h5 class="lead"><strong class="text-danger">3</strong> results were found for the search for <strong class="text-danger">Lorem</strong></h5>
+                </hgroup>
+         
+                {% for img in images %}
+                <article class="search-result row">
+                    <div class="col-xs-12 col-sm-12 col-md-3">
+                        <a href="#" title="Lorem ipsum" class="thumbnail"><img src="{{ url_for('image_store', filename=img) }}" alt="Lorem ipsum" width="200" height="120" /></a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-2">
+                        <ul class="meta-search">
+                            <li><i class="glyphicon glyphicon-calendar"></i> <span>02/15/2014</span></li>
+                            <li><i class="glyphicon glyphicon-time"></i> <span>4:28 pm</span></li>
+                            <li><i class="glyphicon glyphicon-tags"></i> <span>People</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+                        <h3><a href="#" title="">Voluptatem, exercitationem, suscipit, distinctio</a></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
+                        <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+                    </div>
+                    <span class="clearfix borda"></span>
+                </article>
+                {% endfor %}
+      
+                <a href = "/">Go back to home page</a>
+            </section>
+            <div class="text-center digid_desc"><p><a href = "/">DigID</a> - Find someone's digital footprints in one place</p></div>
+        </div>  
+    </body>
+</html>

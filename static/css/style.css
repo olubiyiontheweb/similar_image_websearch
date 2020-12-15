@@ -11,7 +11,7 @@ html {
   margin-bottom: auto;
   margin-top: auto;
   height: 60px;
-  background-color: #353b48;
+  background-color: #092234;
   border-radius: 30px;
   padding: 10px;
 }
@@ -21,8 +21,8 @@ html {
   border: 0;
   outline: 0;
   background: none;
-  width: 450px;
-  caret-color: transparent;
+  width: 80%;
+  caret-color: white;
   line-height: 40px;
   transition: width 0.4s linear;
 }
@@ -61,9 +61,6 @@ html {
   text-decoration: none;
 }
 
-.DigID_logo {
-}
-
 .col-md-offset-3.col-lg-6.col-lg-offset-3 {
   margin: auto;
 }
@@ -93,3 +90,111 @@ img.center {
   margin-top: 5px;
   margin-left: 10px;
 } */
+
+input#image-input {
+  display: none;
+}
+
+input#submit-botton {
+  display: none;
+}
+
+.mb-3.search_bar_result {
+  margin-top: 5px;
+  background: white;
+  border-radius: 30px;
+  border: 1px solid #f5efee;
+  outline: black;
+}
+
+mb-3.search_bar_result > label.search_image_icon {
+  background: black;
+}
+
+form.search_bar_result label.search_image_icon i.fas.fa-camera::before {
+  color: #223d4e;
+}
+
+form.search_bar_result label.search_icon i.fas.fa-search::before {
+  color: #223d4e;
+}
+
+form.search_bar_result input.search_input {
+  caret-color: #223d4e;
+  color: #223d4e;
+}
+
+form.search_bar_result input.search_input:hover {
+  caret-color: #223d4e;
+  transition: width 0.4s linear;
+  color: #223d4e;
+}
+
+.digid_desc p {
+  color: #092234;
+}
+
+form.search_bar_result {
+  margin-top: 10px;
+}
+
+.search-result .thumbnail {
+  border-radius: 0 !important;
+}
+.search-result:first-child {
+  margin-top: 0 !important;
+}
+.search-result {
+  margin-top: 20px;
+}
+.search-result .col-md-2 {
+  border-right: 1px dotted #ccc;
+  min-height: 140px;
+}
+.search-result ul {
+  padding-left: 0 !important;
+  list-style: none;
+}
+.search-result ul li {
+  font: 400 normal 0.85em "Roboto", Arial, Verdana, sans-serif;
+  line-height: 30px;
+}
+.search-result ul li i {
+  padding-right: 5px;
+}
+.search-result .col-md-7 {
+  position: relative;
+}
+.search-result h3 {
+  font: 500 normal 1.375em "Roboto", Arial, Verdana, sans-serif;
+  margin-top: 0 !important;
+  margin-bottom: 10px !important;
+}
+.search-result h3 > a,
+.search-result i {
+  color: #248dc1 !important;
+}
+.search-result p {
+  font: normal normal 1.125em "Roboto", Arial, Verdana, sans-serif;
+}
+.search-result span.plus {
+  position: absolute;
+  right: 0;
+  top: 126px;
+}
+.search-result span.plus a {
+  background-color: #248dc1;
+  padding: 5px 5px 3px 5px;
+}
+.search-result span.plus a:hover {
+  background-color: #414141;
+}
+.search-result span.plus a i {
+  color: #fff !important;
+}
+.search-result span.border {
+  display: block;
+  width: 97%;
+  margin: 0 15px;
+  border-bottom: 1px dotted #ccc;
+}
