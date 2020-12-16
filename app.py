@@ -4,11 +4,18 @@ import sqlite3
 import os
 
 from database_structure import database_migrations
-from image_store_processing import compare_files, ALLOWED_EXTENSIONS, IMAGE_FOLDER
+from image_store_processing import compare_files, preprocess, ALLOWED_EXTENSIONS, IMAGE_FOLDER
 
-conn = sqlite3.connect('.\\database\\database.db')
-print("Opened database successfully")
-conn.close()
+# conn = sqlite3.connect('.\\database\\database.db')
+# print("Opened database successfully")
+# conn.close()
+
+#initialize database
+db = database_migrations()
+images = compare_files()
+preprocess_images = preprocess()
+preprocess_images.load_images_into_to_db()
+db.image_store_migrations()
 
 DEBUG = True
 
@@ -56,8 +63,7 @@ def upload_file(filename):
 def search_results():
     images = list()
     print(images)
-    images = compare_files()
-    images = images.load_images()
+    images = preprocess_images.request_list_of_images_in_db()
     return render_template('search_results.html', images=images)
 
 

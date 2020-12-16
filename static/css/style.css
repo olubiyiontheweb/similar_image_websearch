@@ -112,22 +112,22 @@ mb-3.search_bar_result > label.search_image_icon {
 }
 
 form.search_bar_result label.search_image_icon i.fas.fa-camera::before {
-  color: #223d4e;
+  color: #092234;
 }
 
 form.search_bar_result label.search_icon i.fas.fa-search::before {
-  color: #223d4e;
+  color: #092234;
 }
 
 form.search_bar_result input.search_input {
-  caret-color: #223d4e;
-  color: #223d4e;
+  caret-color: #092234;
+  color: #092234;
 }
 
 form.search_bar_result input.search_input:hover {
-  caret-color: #223d4e;
+  caret-color: #092234;
   transition: width 0.4s linear;
-  color: #223d4e;
+  color: #092234;
 }
 
 .digid_desc p {
@@ -183,7 +183,7 @@ form.search_bar_result {
   top: 126px;
 }
 .search-result span.plus a {
-  background-color: #248dc1;
+  background-color: #4a4c4d;
   padding: 5px 5px 3px 5px;
 }
 .search-result span.plus a:hover {
@@ -197,4 +197,12 @@ form.search_bar_result {
   width: 97%;
   margin: 0 15px;
   border-bottom: 1px dotted #ccc;
+}
+
+a.nounderline {
+  text-decoration: none;
+}
+
+a.nounderline:hover {
+  text-decoration: underline;
 }
