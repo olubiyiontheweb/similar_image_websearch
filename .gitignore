@@ -1,6 +1,9 @@
 #fontawesome
 static/fontawesome-free-5.15.1-web/
 
+uploads/
+env/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

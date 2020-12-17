@@ -14,7 +14,7 @@ class database_migrations:
             'CREATE TABLE IF NOT EXISTS image_store (image_id INTEGER PRIMARY KEY AUTOINCREMENT, image_name TEXT UNIQUE, storage_location TEXT, storage_service TEXT)'
         )
         conn.execute( \
-            'CREATE TABLE IF NOT EXISTS image_store_hash (image_hash_id INTEGER PRIMARY KEY AUTOINCREMENT, image_hash TEXT, image_id INTEGER, FOREIGN KEY (image_id) REFERENCES image_store (image_id) )'
+            'CREATE TABLE IF NOT EXISTS image_store_hash (image_hash_id INTEGER PRIMARY KEY AUTOINCREMENT, image_hash TEXT UNIQUE, image_id INTEGER, FOREIGN KEY (image_id) REFERENCES image_store (image_id) )'
         )
         conn.execute( \
             'CREATE TABLE IF NOT EXISTS person_details (person_id INTEGER PRIMARY KEY AUTOINCREMENT, person_name TEXT)')
@@ -28,13 +28,10 @@ class database_migrations:
         conn = sqlite3.connect('.\\database\\database.db')
         print("Opened database successfully")
         print("Inserting values in database tables ....")
-        print(table_values["image_name"])
-        print(table_values["storage_service"])
         try:
-            conn.execute( \
-            "INSERT INTO " + table_name + "(image_name,storage_location,storage_service) VALUES (?,?,?)",
-            (table_values["image_name"], table_values["storage_location"], table_values["storage_service"])
-            )
+            table_values = str(table_values)[1:-1]
+            conn.execute("INSERT INTO " + table_name + " VALUES(null, " +
+                         table_values + ")")
             conn.commit()
             print("Values inserted successfully")
         except:
@@ -43,14 +40,28 @@ class database_migrations:
 
         conn.close()
 
-    def request_matches(self):
+    def request_matches(self, table_name):
         conn = sqlite3.connect('.\\database\\database.db')
         print("Opened database successfully")
         cur = conn.cursor()
         cur.execute( \
-            "select * from image_store"
+            "select * from " + table_name
         )
 
         json = cur.fetchall()
         print("this is it" + str(json))
         return json
+
+    def conditional_request_matches(self, table_name, by_value,
+                                    select_col_name, where_col_name):
+        conn = sqlite3.connect('.\\database\\database.db')
+        print("Opened database successfully")
+        cur = conn.cursor()
+        # print("select " + select_col_name + " from " + table_name + " where " +
+        #      where_col_name + " = " + by_value)
+        cur.execute("select " + select_col_name + " from " + table_name +
+                    " where " + where_col_name + " = " + str(by_value))
+
+        list = cur.fetchall()
+        print("this is it" + str(list))
+        return list
